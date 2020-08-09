@@ -10,15 +10,17 @@ class PostsController < ApplicationController
   end
 
   def checked
+
+   
     post = Post.find(params[:id])
-    if post.checked 
+    if post.checked then
       post.update(checked: false) #checkedカラムがboolean型なので、条件分岐で真偽値を判定
     else
       post.update(checked: true)
     end
 
     item = Post.find(params[:id])
-    render json: {post: item}
+    render json: {post: item} 
 
   end
 
