@@ -1,0 +1,9 @@
+<h1>新規投稿ページ</h1>
+
+
+
+  <%= form_with url: "/posts", method: :post, local: true do |form| %>
+    <%= form.text_field :content %>   <!--ヘルパーメソッドの引数には、name属性にあたる名前が入る。この場合content-->
+    <%= form.submit "投稿する" %> 
+  <% end %>
+
