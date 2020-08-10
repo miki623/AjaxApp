@@ -1,11 +1,12 @@
 <h1>top page</h1>
 
 <%= form_with url: "/posts", method: :post, id:"form" do |f| %>
-<%= f.text_field :content %>
+<%= f.text_field :content , id: "content" %>
 <%= f.submit "投稿する", id: "submit" %>
 <%end%>
 
-
+<div id="list">
+</div>
 
 <% @posts.each do |post| %> 
 <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>
